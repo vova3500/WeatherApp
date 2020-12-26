@@ -1,8 +1,11 @@
 header {
   width: 100%;
 
-  div {
+  .header-title {
+    width: 90%;
+    margin: auto;
     font-size: 22px;
     color: white;
+    opacity: 0.7;
   }
 }

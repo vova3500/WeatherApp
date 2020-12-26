@@ -1,0 +1,24 @@
+.searchString {
+  margin-top: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  border-radius: 5px;
+
+  input[type="text"] {
+    width: calc(100% - 22px);
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: rgba(255, 0, 0, 0);
+    border: none;
+    outline: none;
+  }
+
+  div {
+    background-color: rgb(59, 37, 80);
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 3px;
+  }
+}
