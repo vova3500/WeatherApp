@@ -1,8 +1,10 @@
 const setWeather ="SET_WEATHER"
 const setLoader = "SET_LOADER";
+const setSity = "SET_CITY";
 
 const initialState = {
-  items: [],
+  city: null,
+  items: null,
   loader: false
 };
 
@@ -20,6 +22,13 @@ const groups = (state = initialState, action) => {
         ...state,
         items: action.payload,
       };
+    }
+
+    case setSity: {
+      return {
+        ...state,
+        city: action.payload
+      }
     }
     default: {
       return state;
