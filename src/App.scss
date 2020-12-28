@@ -12,3 +12,13 @@
   width: 60%;
   margin: auto;
 }
+
+.wrapWeather {
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapComingWeather {
+  display: flex;
+  justify-content: space-between;
+}
