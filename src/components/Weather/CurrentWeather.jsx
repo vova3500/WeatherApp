@@ -16,18 +16,21 @@ const CurrentWeather = ({ dataCity, dataWeather }) => {
   return (
     <div className="currentWeather">
       <div className="currentWeather-city">{`${name}, ${country}`}</div>
-      <div className="currentWeather-temp">{temp_max}</div>
+      <div className="currentWeather-temp">
+        {temp_max.toFixed(0)}
+        &deg;
+      </div>
       <div className="currentWeather-icon">
         <img src={`/images/${imgIcon}.svg`} alt="Weather icon" />
       </div>
       <div className="currentWeather-description">{description}</div>
       <div className="currentWeather-info">
-        <div>{`Wind ${speed} m/s`}</div>
-        <div>{`Pressure ${pressure} pPa`}</div>
+        <div>{`Ветер ${speed} m/s`}</div>
+        <div>{`Давление ${pressure} pPa`}</div>
       </div>
       <div className="currentWeather-info">
-        <div>{`Humidity ${humidity}`}</div>
-        <div>{`Clouds ${clouds.all}`}</div>
+        <div>{`Влажность ${humidity}`}</div>
+        <div>{`Облачность ${clouds.all}`}</div>
       </div>
     </div>
   );

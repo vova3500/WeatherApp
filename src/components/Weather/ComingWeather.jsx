@@ -18,7 +18,7 @@ const ComingWeather = ({ dataWeather }) => {
       <div className="comingWeather-icon">
         <img src={`/images/${imgIcon}.svg`} alt="Weather icon" />
       </div>
-      <div className="comingWeather-temp">{temp_max}</div>
+      <div className="comingWeather-temp">{temp_max.toFixed(0)}&deg;</div>
       <div className="comingWeather-description">{description}</div>
     </div>
   );

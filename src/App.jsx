@@ -4,6 +4,8 @@ import { useSelector, useDispatch } from "react-redux";
 
 import { loadingWeather } from "./redux/actions/weather";
 
+import ErrorBoundary from "./components/ErrorBoundary";
+
 import Header from "./components/Header/Header";
 import SearchString from "./components/SearchString/SearchString";
 import CurrentWeather from "./components/Weather/CurrentWeather";
@@ -27,8 +29,6 @@ function App() {
     ? [weather[1], weather[2], weather[3], weather[4]]
     : [];
 
-  console.log(weather);
-  console.log(city);
   return (
     <div className="App">
       <Header />
@@ -37,14 +37,22 @@ function App() {
         <Preloader />
       ) : (
         <div className="content">
-          <SearchString loader={loader} />
+          <ErrorBoundary>
+            <SearchString loader={loader} />
+          </ErrorBoundary>
+
           <div className="wrapWeather">
             {city && weather && (
               <>
-                <CurrentWeather dataCity={city} dataWeather={weather[0]} />
+                <ErrorBoundary>
+                  <CurrentWeather dataCity={city} dataWeather={weather[0]} />
+                </ErrorBoundary>
+
                 <div className="wrapComingWeather">
                   {comingWeather.map((item) => (
-                    <ComingWeather dataWeather={item} />
+                    <ErrorBoundary>
+                      <ComingWeather dataWeather={item} />
+                    </ErrorBoundary>
                   ))}
                 </div>
               </>
