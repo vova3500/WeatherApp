@@ -2,15 +2,19 @@ import React from "react";
 
 import "./Preloader.css";
 
-const Preloader = () => {
-  return (
-    <>
-      <div id="loop" class="center"></div>
-      <div id="bike-wrapper" class="center">
-        <div id="bike" class="centerBike"></div>
-      </div>
-    </>
-  );
+const Preloader = ({ children, loader }) => {
+  if (loader) {
+    return (
+      <>
+        <div id="loop" className="center"></div>
+        <div id="bike-wrapper" className="center">
+          <div id="bike" className="centerBike"></div>
+        </div>
+      </>
+    );
+  }
+
+  return children;
 };
 
 export default Preloader;

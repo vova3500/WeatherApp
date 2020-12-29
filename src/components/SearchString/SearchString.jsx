@@ -5,7 +5,7 @@ import { loadingWeather } from "../../redux/actions/weather";
 
 import "./searchString.scss";
 
-const SearchString = ({ loading }) => {
+const SearchString = () => {
   const dispatch = useDispatch();
   const [inputSearch, setInputSearch] = useState(null);
 
@@ -14,7 +14,11 @@ const SearchString = ({ loading }) => {
   };
 
   const hendleSearch = () => {
-    dispatch(loadingWeather(inputSearch));
+    if (inputSearch) {
+      dispatch(loadingWeather(inputSearch));
+    } else {
+      alert("Введите город");
+    }
   };
   return (
     <div className="searchString">
@@ -23,9 +27,7 @@ const SearchString = ({ loading }) => {
         type="text"
         onChange={hendleInputSearch}
       />
-      <button disabled={loading} onClick={hendleSearch}>
-        🔍
-      </button>
+      <div onClick={hendleSearch}>🔍</div>
     </div>
   );
 };

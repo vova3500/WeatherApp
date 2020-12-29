@@ -12,7 +12,7 @@ const CurrentWeather = ({ dataCity, dataWeather }) => {
   const { clouds } = dataWeather;
 
   const imgIcon = weatherIcon(icon);
-  console.log(dataWeather);
+
   return (
     <div className="currentWeather">
       <div className="currentWeather-city">{`${name}, ${country}`}</div>

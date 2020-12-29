@@ -33,12 +33,10 @@ function App() {
     <div className="App">
       <Header />
 
-      {loader ? (
-        <Preloader />
-      ) : (
+      <Preloader loader={loader}>
         <div className="content">
           <ErrorBoundary>
-            <SearchString loader={loader} />
+            <SearchString />
           </ErrorBoundary>
 
           <div className="wrapWeather">
@@ -49,8 +47,8 @@ function App() {
                 </ErrorBoundary>
 
                 <div className="wrapComingWeather">
-                  {comingWeather.map((item) => (
-                    <ErrorBoundary>
+                  {comingWeather.map((item, index) => (
+                    <ErrorBoundary key={index}>
                       <ComingWeather dataWeather={item} />
                     </ErrorBoundary>
                   ))}
@@ -59,7 +57,7 @@ function App() {
             )}
           </div>
         </div>
-      )}
+      </Preloader>
     </div>
   );
 }

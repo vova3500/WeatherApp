@@ -27,6 +27,7 @@ export const loadingWeather = (city) => async (dispatch) => {
     }
     catch (e){
         dispatch(setLoader())
-        console.log(e)
+        console.error('внешний блок catch', e.message)
+        alert("Город не найден!")
     }
   };
